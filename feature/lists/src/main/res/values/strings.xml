@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lists_screen_title">Lists</string>
+    <string name="lists_enabled">Enabled</string>
+    <string name="lists_add_source">Add list URL</string>
+    <string name="lists_refresh_now">Refresh lists</string>
+    <string name="lists_url_hint">https://…</string>
+    <string name="lists_add">Add</string>
+    <string name="lists_cancel">Cancel</string>
+    <string name="lists_save">Save</string>
+    <string name="lists_delete">Remove</string>
+    <string name="lists_empty">No adlist sources yet. Add a URL to download blocklists.</string>
+    <string name="lists_invalid_url">Enter an http(s) URL</string>
+    <string name="lists_last_ok">Last OK</string>
+    <string name="lists_needs_update">Needs update</string>
+    <string name="lists_needs_update_detail_never">Not fetched successfully yet</string>
+    <string name="lists_needs_update_detail_stale">Last successful refresh was more than 7 days ago</string>
+    <string name="lists_needs_update_detail_error">Last refresh failed; see error below</string>
+    <string name="lists_last_error_label">Error</string>
+    <string name="lists_last_result">Result</string>
+    <string name="lists_refreshing">Refreshing…</string>
+</resources>
