@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logs_search_hint">Search domain</string>
+    <string name="logs_filter_all">All</string>
+    <string name="logs_filter_blocked">Blocked</string>
+    <string name="logs_filter_allowed">Allowed</string>
+    <string name="logs_filter_pass">Pass</string>
+</resources>
