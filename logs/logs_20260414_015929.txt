@@ -1,0 +1,532 @@
+INFO[0000] network: updated available networks: wlan0 (wifi), tun0 (wifi), rmnet_data1 (cellular, expensive)
+INFO[0000] network: updated default interface wlan0, index 30, type wifi
+INFO[0000] inbound/tun[tun-in]: started at tun1
+INFO[0000] sing-box started (0.57s)
+INFO[0003] network: updated available networks: wlan0 (wifi), rmnet_data1 (cellular, expensive)
+INFO[0014] router: found package name: com.android.vending
+INFO[0014] [1566817585 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:49761
+INFO[0014] [1566817585 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0014] [1566817585 0ms] router: found package name: com.android.vending
+ERROR[0014] [1566817585 3ms] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:48902->127.0.0.1:53535: read: connection refused
+ERROR[0014] [1566817585 4ms] router: process DNS packet: read udp 127.0.0.1:48902->127.0.0.1:53535: read: connection refused
+INFO[0016] router: found package name: com.brave.browser
+INFO[0016] router: found package name: com.brave.browser
+INFO[0016] [1647789765 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:19716
+INFO[0016] [1647789765 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0016] [1647789765 0ms] router: found package name: com.brave.browser
+INFO[0016] [3923105727 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:25490
+INFO[0016] [3923105727 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0016] [3923105727 0ms] router: found package name: com.brave.browser
+ERROR[0016] [1647789765 6ms] dns: exchange failed for duckduckgo.com. IN HTTPS: write udp 127.0.0.1:45088->127.0.0.1:53535: write: connection refused
+ERROR[0016] [3923105727 6ms] dns: exchange failed for duckduckgo.com. IN A: write request: write udp 127.0.0.1:45088->127.0.0.1:53535: write: connection refused
+ERROR[0016] [3923105727 6ms] router: process DNS packet: write request: write udp 127.0.0.1:45088->127.0.0.1:53535: write: connection refused
+ERROR[0016] [1647789765 6ms] router: process DNS packet: write udp 127.0.0.1:45088->127.0.0.1:53535: write: connection refused
+INFO[0016] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0016] [2916245622 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:39376
+INFO[0016] [2916245622 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0016] [2916245622 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0016] [2916245622 3ms] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:45227->127.0.0.1:53535: read: connection refused
+ERROR[0016] [2916245622 3ms] router: process DNS packet: read udp 127.0.0.1:45227->127.0.0.1:53535: read: connection refused
+INFO[0017] router: found package name: com.brave.browser
+INFO[0017] router: found package name: com.brave.browser
+INFO[0017] [444085905 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:64524
+INFO[0017] [444085905 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0017] [444085905 0ms] router: found package name: com.brave.browser
+INFO[0017] [3084122948 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:28951
+INFO[0017] [3084122948 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0017] [3084122948 0ms] router: found package name: com.brave.browser
+ERROR[0017] [444085905 4ms] dns: exchange failed for duckduckgo.com. IN HTTPS: read udp 127.0.0.1:42587->127.0.0.1:53535: read: connection refused
+ERROR[0017] [3084122948 4ms] dns: exchange failed for duckduckgo.com. IN A: read udp 127.0.0.1:42587->127.0.0.1:53535: read: connection refused
+ERROR[0017] [3084122948 4ms] router: process DNS packet: read udp 127.0.0.1:42587->127.0.0.1:53535: read: connection refused
+ERROR[0017] [444085905 4ms] router: process DNS packet: read udp 127.0.0.1:42587->127.0.0.1:53535: read: connection refused
+INFO[0019] router: found package name: com.brave.browser
+INFO[0019] [1852321357 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:41838
+INFO[0019] [1852321357 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0019] [1852321357 0ms] router: found package name: com.brave.browser
+ERROR[0019] [1852321357 7ms] dns: exchange failed for duckduckgo.com. IN A: read udp 127.0.0.1:43831->127.0.0.1:53535: read: connection refused
+ERROR[0019] [1852321357 7ms] router: process DNS packet: read udp 127.0.0.1:43831->127.0.0.1:53535: read: connection refused
+INFO[0019] router: found package name: com.brave.browser
+INFO[0019] router: found package name: com.brave.browser
+INFO[0019] [3023075829 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:24802
+INFO[0019] [3023075829 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0019] [3023075829 0ms] router: found package name: com.brave.browser
+INFO[0019] [2478453936 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:36520
+INFO[0019] [2478453936 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0019] [2478453936 0ms] router: found package name: com.brave.browser
+ERROR[0019] [3023075829 5ms] dns: exchange failed for variations.brave.com. IN A: write request: write udp 127.0.0.1:44381->127.0.0.1:53535: use of closed network connection
+ERROR[0019] [2478453936 4ms] dns: exchange failed for variations.brave.com. IN HTTPS: read udp 127.0.0.1:44381->127.0.0.1:53535: read: connection refused
+ERROR[0019] [2478453936 4ms] router: process DNS packet: read udp 127.0.0.1:44381->127.0.0.1:53535: read: connection refused
+ERROR[0019] [1566817585 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:45435->127.0.0.1:53535: read: connection refused
+ERROR[0019] [1566817585 5.0s] router: process DNS packet: read udp 127.0.0.1:45435->127.0.0.1:53535: read: connection refused
+INFO[0020] router: found package name: com.brave.browser
+INFO[0020] [79217916 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:31170
+INFO[0020] [79217916 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0020] router: found package name: com.brave.browser
+INFO[0020] [79217916 0ms] router: found package name: com.brave.browser
+INFO[0020] [3591128966 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:14177
+INFO[0020] [3591128966 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0020] [3591128966 0ms] router: found package name: com.brave.browser
+ERROR[0020] [3591128966 6ms] dns: exchange failed for variations.brave.com. IN HTTPS: read udp 127.0.0.1:38630->127.0.0.1:53535: read: connection refused
+ERROR[0020] [79217916 6ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:38630->127.0.0.1:53535: read: connection refused
+ERROR[0020] [3591128966 6ms] router: process DNS packet: read udp 127.0.0.1:38630->127.0.0.1:53535: read: connection refused
+ERROR[0020] [79217916 6ms] router: process DNS packet: read udp 127.0.0.1:38630->127.0.0.1:53535: read: connection refused
+ERROR[0021] [2916245622 5.0s] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:37007->127.0.0.1:53535: read: connection refused
+ERROR[0021] [2916245622 5.0s] router: process DNS packet: read udp 127.0.0.1:37007->127.0.0.1:53535: read: connection refused
+INFO[0022] router: found package name: com.brave.browser
+INFO[0022] [4189581550 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:10729
+INFO[0022] [4189581550 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0022] [4189581550 0ms] router: found package name: com.brave.browser
+ERROR[0022] [4189581550 4ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:38441->127.0.0.1:53535: read: connection refused
+ERROR[0022] [4189581550 4ms] router: process DNS packet: read udp 127.0.0.1:38441->127.0.0.1:53535: read: connection refused
+ERROR[0024] [1852321357 5.0s] dns: exchange failed for duckduckgo.com. IN A: read udp 127.0.0.1:43587->127.0.0.1:53535: read: connection refused
+ERROR[0024] [1852321357 5.0s] router: process DNS packet: read udp 127.0.0.1:43587->127.0.0.1:53535: read: connection refused
+INFO[0024] router: found package name: com.android.vending
+INFO[0024] [2209809394 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:50824
+INFO[0024] [2209809394 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0024] [2209809394 0ms] router: found package name: com.android.vending
+ERROR[0024] [2209809394 4ms] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:41165->127.0.0.1:53535: read: connection refused
+INFO[0024] router: found package name: com.android.vending
+INFO[0024] [2884673548 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:18689
+INFO[0024] [2884673548 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0024] [2884673548 0ms] router: found package name: com.android.vending
+ERROR[0024] [2884673548 3ms] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:44408->127.0.0.1:53535: read: connection refused
+ERROR[0024] [2884673548 3ms] router: process DNS packet: read udp 127.0.0.1:44408->127.0.0.1:53535: read: connection refused
+ERROR[0024] [2209809394 10ms] router: process DNS packet: read udp 127.0.0.1:41165->127.0.0.1:53535: read: connection refused
+INFO[0026] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0026] [2287637138 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:17866
+INFO[0026] [2287637138 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0026] [2287637138 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0026] [2287637138 2ms] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:41288->127.0.0.1:53535: read: connection refused
+ERROR[0026] [2287637138 3ms] router: process DNS packet: read udp 127.0.0.1:41288->127.0.0.1:53535: read: connection refused
+INFO[0026] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0026] [264323540 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:30902
+INFO[0026] [264323540 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0026] [264323540 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0026] [264323540 2ms] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:37768->127.0.0.1:53535: read: connection refused
+ERROR[0026] [264323540 2ms] router: process DNS packet: read udp 127.0.0.1:37768->127.0.0.1:53535: read: connection refused
+ERROR[0027] [4189581550 5.1s] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:38003->127.0.0.1:53535: read: connection refused
+ERROR[0027] [4189581550 5.1s] router: process DNS packet: read udp 127.0.0.1:38003->127.0.0.1:53535: read: connection refused
+INFO[0029] router: found package name: com.brave.browser
+INFO[0029] [527168021 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:7622
+INFO[0029] [527168021 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0029] [527168021 0ms] router: found package name: com.brave.browser
+ERROR[0029] [527168021 12ms] dns: exchange failed for duckduckgo.com. IN A: read udp 127.0.0.1:43576->127.0.0.1:53535: read: connection refused
+ERROR[0029] [527168021 12ms] router: process DNS packet: read udp 127.0.0.1:43576->127.0.0.1:53535: read: connection refused
+ERROR[0029] [2209809394 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:43115->127.0.0.1:53535: read: connection refused
+ERROR[0029] [2209809394 5.0s] router: process DNS packet: read udp 127.0.0.1:43115->127.0.0.1:53535: read: connection refused
+ERROR[0029] [2884673548 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:45915->127.0.0.1:53535: read: connection refused
+ERROR[0029] [2884673548 5.0s] router: process DNS packet: read udp 127.0.0.1:45915->127.0.0.1:53535: read: connection refused
+ERROR[0031] [2287637138 5.1s] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:37533->127.0.0.1:53535: read: connection refused
+ERROR[0031] [2287637138 5.1s] router: process DNS packet: read udp 127.0.0.1:37533->127.0.0.1:53535: read: connection refused
+ERROR[0031] [264323540 5.1s] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:49105->127.0.0.1:53535: read: connection refused
+ERROR[0031] [264323540 5.1s] router: process DNS packet: read udp 127.0.0.1:49105->127.0.0.1:53535: read: connection refused
+INFO[0032] router: found package name: com.brave.browser
+INFO[0032] [3198288526 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:20236
+INFO[0032] [3198288526 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0032] [3198288526 0ms] router: found package name: com.brave.browser
+INFO[0032] router: found package name: com.brave.browser
+INFO[0032] [2273453606 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:32052
+INFO[0032] [2273453606 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0032] [2273453606 0ms] router: found package name: com.brave.browser
+INFO[0032] router: found package name: com.brave.browser
+INFO[0032] [4077748969 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:44990
+INFO[0032] [4077748969 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0032] [4077748969 0ms] router: found package name: com.brave.browser
+ERROR[0032] [4077748969 4ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:45068->127.0.0.1:53535: read: connection refused
+ERROR[0032] [2273453606 5ms] dns: exchange failed for variations.brave.com. IN HTTPS: read udp 127.0.0.1:45068->127.0.0.1:53535: read: connection refused
+ERROR[0032] [2273453606 5ms] router: process DNS packet: read udp 127.0.0.1:45068->127.0.0.1:53535: read: connection refused
+ERROR[0032] [4077748969 4ms] router: process DNS packet: read udp 127.0.0.1:45068->127.0.0.1:53535: read: connection refused
+ERROR[0032] [3198288526 8ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:39944->127.0.0.1:53535: read: connection refused
+ERROR[0032] [3198288526 9ms] router: process DNS packet: read udp 127.0.0.1:39944->127.0.0.1:53535: read: connection refused
+INFO[0033] router: found package name: com.brave.browser
+INFO[0033] router: found package name: com.brave.browser
+INFO[0033] [1684372277 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:45420
+INFO[0033] [4025820808 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:19057
+INFO[0033] [1684372277 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0033] [4025820808 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0033] [1684372277 0ms] router: found package name: com.brave.browser
+INFO[0033] [4025820808 0ms] router: found package name: com.brave.browser
+ERROR[0033] [4025820808 5ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:45281->127.0.0.1:53535: read: connection refused
+ERROR[0033] [1684372277 5ms] dns: exchange failed for variations.brave.com. IN HTTPS: write request: write udp 127.0.0.1:45281->127.0.0.1:53535: use of closed network connection
+ERROR[0033] [4025820808 5ms] router: process DNS packet: read udp 127.0.0.1:45281->127.0.0.1:53535: read: connection refused
+ERROR[0034] [527168021 5.0s] dns: exchange failed for duckduckgo.com. IN A: read udp 127.0.0.1:46499->127.0.0.1:53535: read: connection refused
+ERROR[0034] [527168021 5.0s] router: process DNS packet: read udp 127.0.0.1:46499->127.0.0.1:53535: read: connection refused
+INFO[0034] router: found package name: com.android.vending
+INFO[0034] [3500846503 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:63595
+INFO[0034] [3500846503 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0034] [3500846503 0ms] router: found package name: com.android.vending
+ERROR[0034] [3500846503 4ms] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:38383->127.0.0.1:53535: read: connection refused
+ERROR[0034] [3500846503 5ms] router: process DNS packet: read udp 127.0.0.1:38383->127.0.0.1:53535: read: connection refused
+INFO[0035] router: found package name: com.brave.browser
+INFO[0035] [1117562769 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:45522
+INFO[0035] [1117562769 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0035] [1117562769 0ms] router: found package name: com.brave.browser
+ERROR[0035] [1117562769 3ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:44566->127.0.0.1:53535: read: connection refused
+ERROR[0035] [1117562769 3ms] router: process DNS packet: read udp 127.0.0.1:44566->127.0.0.1:53535: read: connection refused
+INFO[0036] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0036] [2968717322 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:30493
+INFO[0036] [2968717322 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0036] [2968717322 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0036] [2968717322 5ms] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:38927->127.0.0.1:53535: read: connection refused
+ERROR[0036] [2968717322 5ms] router: process DNS packet: read udp 127.0.0.1:38927->127.0.0.1:53535: read: connection refused
+ERROR[0037] [3198288526 5.1s] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:48062->127.0.0.1:53535: read: connection refused
+ERROR[0037] [3198288526 5.1s] router: process DNS packet: read udp 127.0.0.1:48062->127.0.0.1:53535: read: connection refused
+ERROR[0039] [3500846503 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:41159->127.0.0.1:53535: read: connection refused
+ERROR[0039] [3500846503 5.0s] router: process DNS packet: read udp 127.0.0.1:41159->127.0.0.1:53535: read: connection refused
+ERROR[0040] [1117562769 5.1s] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:44665->127.0.0.1:53535: read: connection refused
+ERROR[0040] [1117562769 5.1s] router: process DNS packet: read udp 127.0.0.1:44665->127.0.0.1:53535: read: connection refused
+INFO[0041] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0041] [294837342 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:34700
+INFO[0041] [294837342 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0041] [294837342 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0041] [294837342 3ms] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:43916->127.0.0.1:53535: read: connection refused
+ERROR[0041] [294837342 3ms] router: process DNS packet: read udp 127.0.0.1:43916->127.0.0.1:53535: read: connection refused
+ERROR[0041] [2968717322 5.0s] dns: exchange failed for safebrowsing.googleapis.com. IN A: read udp 127.0.0.1:41621->127.0.0.1:53535: read: connection refused
+ERROR[0041] [2968717322 5.0s] router: process DNS packet: read udp 127.0.0.1:41621->127.0.0.1:53535: read: connection refused
+INFO[0042] router: found package name: com.brave.browser
+INFO[0042] [52781933 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:45126
+INFO[0042] [52781933 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0042] [52781933 0ms] router: found package name: com.brave.browser
+ERROR[0042] [52781933 4ms] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:42227->127.0.0.1:53535: read: connection refused
+ERROR[0042] [52781933 4ms] router: process DNS packet: read udp 127.0.0.1:42227->127.0.0.1:53535: read: connection refused
+ERROR[0046] [294837342 5.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:46927->127.0.0.1:53535: read: connection refused
+ERROR[0046] [294837342 5.0s] router: process DNS packet: read udp 127.0.0.1:46927->127.0.0.1:53535: read: connection refused
+ERROR[0047] [52781933 5.0s] dns: exchange failed for variations.brave.com. IN A: read udp 127.0.0.1:43004->127.0.0.1:53535: read: connection refused
+ERROR[0047] [52781933 5.0s] router: process DNS packet: read udp 127.0.0.1:43004->127.0.0.1:53535: read: connection refused
+INFO[0191] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0191] [1417420735 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:33209
+INFO[0191] [1417420735 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0191] [1417420735 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0191] [1417420735 3ms] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:40979->127.0.0.1:53535: read: connection refused
+ERROR[0191] [1417420735 3ms] router: process DNS packet: read udp 127.0.0.1:40979->127.0.0.1:53535: read: connection refused
+ERROR[0196] [1417420735 5.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:42537->127.0.0.1:53535: read: connection refused
+ERROR[0196] [1417420735 5.0s] router: process DNS packet: read udp 127.0.0.1:42537->127.0.0.1:53535: read: connection refused
+INFO[0311] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0311] [108519961 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:7446
+INFO[0311] [108519961 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0311] [108519961 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0311] [108519961 5ms] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:45960->127.0.0.1:53535: read: connection refused
+ERROR[0311] [108519961 5ms] router: process DNS packet: read udp 127.0.0.1:45960->127.0.0.1:53535: read: connection refused
+ERROR[0316] [108519961 5.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:40031->127.0.0.1:53535: read: connection refused
+ERROR[0316] [108519961 5.0s] router: process DNS packet: read udp 127.0.0.1:40031->127.0.0.1:53535: read: connection refused
+INFO[0432] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0432] [848519552 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:59567
+INFO[0432] [848519552 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0432] [848519552 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0432] [848519552 4ms] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:48771->127.0.0.1:53535: read: connection refused
+ERROR[0432] [848519552 4ms] router: process DNS packet: read udp 127.0.0.1:48771->127.0.0.1:53535: read: connection refused
+ERROR[0437] [848519552 5.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: read udp 127.0.0.1:41326->127.0.0.1:53535: read: connection refused
+ERROR[0437] [848519552 5.0s] router: process DNS packet: read udp 127.0.0.1:41326->127.0.0.1:53535: read: connection refused
+INFO[0446] router: found package name: org.pihole.android
+INFO[0446] [3907615115 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:40340
+INFO[0446] [3907615115 0ms] inbound/tun[tun-in]: inbound connection to 5.135.136.59:9008
+INFO[0446] [3907615115 0ms] router: found package name: org.pihole.android
+INFO[0446] router: found package name: org.pihole.android
+INFO[0446] [4229533474 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:37306
+INFO[0446] [4229533474 0ms] inbound/tun[tun-in]: inbound connection to 95.214.53.96:8444
+INFO[0446] [4229533474 0ms] router: found package name: org.pihole.android
+INFO[0446] [4229533474 232ms] outbound/direct[direct]: outbound connection to 95.214.53.96:8444
+INFO[0446] [3907615115 266ms] outbound/direct[direct]: outbound connection to 5.135.136.59:9008
+INFO[0491] router: found package name: com.brave.browser
+INFO[0491] [2655174110 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:39792
+INFO[0491] [2655174110 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0491] [2655174110 0ms] router: found package name: com.brave.browser
+INFO[0491] router: found package name: com.brave.browser
+INFO[0491] [1287088151 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:21954
+INFO[0491] [1287088151 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0491] [1287088151 0ms] router: found package name: com.brave.browser
+INFO[0491] router: found package name: com.android.vending
+INFO[0491] [3323371150 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:1742
+INFO[0491] [3323371150 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0491] [3323371150 0ms] router: found package name: com.android.vending
+INFO[0492] router: found package name: com.brave.browser
+INFO[0492] router: found package name: com.brave.browser
+INFO[0492] [2516627722 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:10465
+INFO[0492] [2516627722 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0492] [1197836382 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:13904
+INFO[0492] [2516627722 0ms] router: found package name: com.brave.browser
+INFO[0492] [1197836382 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0492] [1197836382 0ms] router: found package name: com.brave.browser
+INFO[0494] router: found package name: com.brave.browser
+INFO[0494] [4285054729 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:11479
+INFO[0494] [4285054729 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0494] [4285054729 0ms] router: found package name: com.brave.browser
+ERROR[0501] [2655174110 10.0s] dns: exchange failed for example.com. IN HTTPS: context deadline exceeded
+ERROR[0501] [1287088151 10.0s] dns: exchange failed for example.com. IN A: context deadline exceeded
+ERROR[0501] [3323371150 10.0s] dns: exchange failed for play-fe.googleapis.com. IN A: context deadline exceeded
+INFO[0501] router: found package name: com.android.vending
+INFO[0501] [4234332567 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:38875
+INFO[0501] [4234332567 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0501] [4234332567 0ms] router: found package name: com.android.vending
+INFO[0501] router: found package name: com.android.vending
+INFO[0501] [932557260 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:52521
+INFO[0501] [932557260 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0501] [932557260 0ms] router: found package name: com.android.vending
+INFO[0504] router: found package name: com.brave.browser
+INFO[0504] [3548661712 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:7795
+INFO[0504] [3548661712 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0504] [3548661712 0ms] router: found package name: com.brave.browser
+INFO[0504] router: found package name: com.brave.browser
+INFO[0504] [1760042963 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:1404
+INFO[0504] [1760042963 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0504] [1760042963 0ms] router: found package name: com.brave.browser
+ERROR[0504] [3323371150 13.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [3323371150 13.0s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [3548661712 2ms] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [3548661712 2ms] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4234332567 2.99s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4285054729 10.1s] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4234332567 2.99s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4285054729 10.1s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4285054729 10.1s] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [4285054729 10.1s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [2516627722 12.4s] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [2516627722 12.4s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+INFO[0504] router: found package name: com.brave.browser
+INFO[0504] [1764615721 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:26712
+INFO[0504] [1764615721 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0504] [1764615721 0ms] router: found package name: com.brave.browser
+ERROR[0504] [1197836382 12.4s] dns: exchange failed for example.com. IN HTTPS: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [1197836382 12.4s] router: process DNS packet: read udp 127.0.0.1:43274->127.0.0.1:53535: read: connection refused
+ERROR[0504] [1764615721 1ms] dns: exchange failed for example.com. IN A: write request: write udp 127.0.0.1:49296->127.0.0.1:53535: use of closed network connection
+ERROR[0504] [1760042963 3ms] dns: exchange failed for example.com. IN HTTPS: read udp 127.0.0.1:49296->127.0.0.1:53535: read: connection refused
+ERROR[0504] [1760042963 3ms] router: process DNS packet: read udp 127.0.0.1:49296->127.0.0.1:53535: read: connection refused
+ERROR[0504] [932557260 2.98s] dns: exchange failed for play-fe.googleapis.com. IN A: write request: write udp 127.0.0.1:49296->127.0.0.1:53535: use of closed network connection
+INFO[0505] router: found package name: com.brave.browser
+INFO[0505] [468630597 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:2520
+INFO[0505] [468630597 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0505] [468630597 0ms] router: found package name: com.brave.browser
+INFO[0505] router: found package name: com.brave.browser
+INFO[0505] [3823714205 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:56060
+INFO[0505] [3823714205 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0505] [3823714205 0ms] router: found package name: com.brave.browser
+ERROR[0505] [468630597 7ms] dns: exchange failed for example.com. IN HTTPS: write request: write udp 127.0.0.1:48681->127.0.0.1:53535: use of closed network connection
+ERROR[0505] [3823714205 5ms] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:48681->127.0.0.1:53535: read: connection refused
+ERROR[0505] [3823714205 5ms] router: process DNS packet: read udp 127.0.0.1:48681->127.0.0.1:53535: read: connection refused
+INFO[0506] router: found package name: org.lineageos.jelly
+INFO[0506] [1620180769 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:49494
+INFO[0506] [1620180769 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0506] [1620180769 0ms] router: found package name: org.lineageos.jelly
+ERROR[0506] [1620180769 4ms] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:45483->127.0.0.1:53535: read: connection refused
+ERROR[0506] [1620180769 4ms] router: process DNS packet: read udp 127.0.0.1:45483->127.0.0.1:53535: read: connection refused
+ERROR[0506] [4234332567 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:46866->127.0.0.1:53535: read: connection refused
+ERROR[0506] [4234332567 5.0s] router: process DNS packet: read udp 127.0.0.1:46866->127.0.0.1:53535: read: connection refused
+ERROR[0506] [932557260 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:42093->127.0.0.1:53535: read: connection refused
+ERROR[0506] [932557260 5.0s] router: process DNS packet: read udp 127.0.0.1:42093->127.0.0.1:53535: read: connection refused
+INFO[0507] router: found package name: com.brave.browser
+INFO[0507] [1087898132 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:3174
+INFO[0507] [1087898132 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0507] [1087898132 0ms] router: found package name: com.brave.browser
+ERROR[0507] [1087898132 3ms] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:43672->127.0.0.1:53535: read: connection refused
+ERROR[0507] [1087898132 3ms] router: process DNS packet: read udp 127.0.0.1:43672->127.0.0.1:53535: read: connection refused
+ERROR[0509] [3548661712 5.0s] dns: exchange failed for example.com. IN A: read udp 127.0.0.1:41427->127.0.0.1:53535: read: connection refused
+ERROR[0509] [3548661712 5.0s] router: process DNS packet: read udp 127.0.0.1:41427->127.0.0.1:53535: read: connection refused
+ERROR[0511] [1620180769 5.1s] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:49617->127.0.0.1:53535: read: connection refused
+ERROR[0511] [1620180769 5.1s] router: process DNS packet: read udp 127.0.0.1:49617->127.0.0.1:53535: read: connection refused
+INFO[0511] router: found package name: com.android.vending
+INFO[0511] [19019410 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:54628
+INFO[0511] [19019410 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0511] [19019410 0ms] router: found package name: com.android.vending
+ERROR[0511] [19019410 3ms] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:41476->127.0.0.1:53535: read: connection refused
+ERROR[0511] [19019410 3ms] router: process DNS packet: read udp 127.0.0.1:41476->127.0.0.1:53535: read: connection refused
+INFO[0516] router: found package name: org.lineageos.jelly
+INFO[0516] [1877692138 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:54387
+INFO[0516] [1877692138 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0516] [1877692138 0ms] router: found package name: org.lineageos.jelly
+INFO[0516] router: found package name: org.lineageos.jelly
+INFO[0516] [3734462089 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:43083
+INFO[0516] [3734462089 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0516] [3734462089 0ms] router: found package name: org.lineageos.jelly
+ERROR[0516] [1877692138 4ms] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:45841->127.0.0.1:53535: read: connection refused
+ERROR[0516] [1877692138 4ms] router: process DNS packet: read udp 127.0.0.1:45841->127.0.0.1:53535: read: connection refused
+ERROR[0516] [3734462089 3ms] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:37545->127.0.0.1:53535: read: connection refused
+ERROR[0516] [3734462089 3ms] router: process DNS packet: read udp 127.0.0.1:37545->127.0.0.1:53535: read: connection refused
+ERROR[0516] [19019410 5.0s] dns: exchange failed for play-fe.googleapis.com. IN A: read udp 127.0.0.1:41478->127.0.0.1:53535: read: connection refused
+ERROR[0516] [19019410 5.0s] router: process DNS packet: read udp 127.0.0.1:41478->127.0.0.1:53535: read: connection refused
+ERROR[0521] [1877692138 5.0s] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:37221->127.0.0.1:53535: read: connection refused
+ERROR[0521] [1877692138 5.0s] router: process DNS packet: read udp 127.0.0.1:37221->127.0.0.1:53535: read: connection refused
+ERROR[0521] [3734462089 5.0s] dns: exchange failed for dns.google. IN A: read udp 127.0.0.1:43480->127.0.0.1:53535: read: connection refused
+ERROR[0521] [3734462089 5.0s] router: process DNS packet: read udp 127.0.0.1:43480->127.0.0.1:53535: read: connection refused
+INFO[0526] router: found package name: org.lineageos.jelly
+INFO[0526] [1076283543 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:14736
+INFO[0526] [1076283543 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0526] [1076283543 0ms] router: found package name: org.lineageos.jelly
+INFO[0526] router: found package name: org.lineageos.jelly
+INFO[0526] [2579681083 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:32647
+INFO[0526] [2579681083 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0526] [2579681083 0ms] router: found package name: org.lineageos.jelly
+ERROR[0536] [1076283543 10.0s] dns: exchange failed for dns.google. IN A: context deadline exceeded
+ERROR[0536] [2579681083 10.0s] dns: exchange failed for www.google.com. IN A: context deadline exceeded
+INFO[0540] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0540] [3974957570 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:18221
+INFO[0540] [3974957570 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0540] [3974957570 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0550] [3974957570 10.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0560] [3974957570 20.1s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+INFO[0665] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0665] [3254267538 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:30781
+INFO[0665] [3254267538 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0665] [3254267538 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0667] router: found package name: com.android.vending
+INFO[0667] [3197427303 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:2867
+INFO[0667] [3197427303 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0667] [3197427303 0ms] router: found package name: com.android.vending
+ERROR[0675] [3254267538 10.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0677] [3197427303 10.0s] dns: exchange failed for play.googleapis.com. IN A: context deadline exceeded
+INFO[0681] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0681] [3076249242 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:31481
+INFO[0681] [3076249242 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0681] [3076249242 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0681] router: found package name: com.google.android.syncadapters.calendar
+INFO[0681] [2492877664 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:27222
+INFO[0681] [2492877664 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0681] [2492877664 0ms] router: found package name: com.google.android.syncadapters.calendar
+ERROR[0685] [3254267538 20.1s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0687] [3197427303 20.0s] dns: exchange failed for play.googleapis.com. IN A: context deadline exceeded
+ERROR[0691] [3076249242 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0691] [2492877664 10.0s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+INFO[0691] router: found package name: com.google.android.syncadapters.calendar
+INFO[0691] [2024755529 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:42658
+INFO[0691] [2024755529 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0691] [2024755529 0ms] router: found package name: com.google.android.syncadapters.calendar
+INFO[0691] router: found package name: com.google.android.syncadapters.calendar
+INFO[0691] [1309152262 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:27932
+INFO[0691] [1309152262 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0691] [1309152262 0ms] router: found package name: com.google.android.syncadapters.calendar
+INFO[0693] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0693] [3779188586 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:15867
+INFO[0693] [3779188586 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0693] [3779188586 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0701] [3076249242 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0701] [2492877664 20.0s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0701] [2024755529 10.0s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+INFO[0701] router: found package name: com.google.android.syncadapters.calendar
+INFO[0701] [2858817792 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:36570
+INFO[0701] [2858817792 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0701] [2858817792 0ms] router: found package name: com.google.android.syncadapters.calendar
+ERROR[0703] [3779188586 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0706] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0706] [3586244977 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:51268
+INFO[0706] [3586244977 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0706] [3586244977 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0711] [1309152262 19.99s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0711] [1309152262 19.99s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0711] [2024755529 20.0s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0711] [2858817792 10.0s] dns: exchange failed for calendarpushsubscription-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0713] [3779188586 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0716] [3586244977 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0720] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0720] [2591766116 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:65392
+INFO[0720] [2591766116 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0720] [2591766116 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0726] [3586244977 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0730] [2591766116 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0737] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0737] [978167359 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:61635
+INFO[0737] [978167359 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0737] [978167359 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0740] [2591766116 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0747] [978167359 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0757] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0757] [2029935882 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:2926
+INFO[0757] [2029935882 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0757] [2029935882 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0757] [978167359 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0767] [2029935882 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0777] [2029935882 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0786] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0786] [3504290555 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:65019
+INFO[0786] [3504290555 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0786] [3504290555 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0796] [3504290555 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0799] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0799] [3723798313 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:48702
+INFO[0799] [3723798313 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0799] [3723798313 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0806] [3504290555 20.1s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0809] [3723798313 10.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0819] [3723798313 20.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+INFO[0820] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0820] [1987325386 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:44189
+INFO[0820] [1987325386 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0820] [1987325386 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0830] [1987325386 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0840] [1987325386 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0878] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0878] [4109896575 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:19232
+INFO[0878] [4109896575 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0878] [4109896575 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0888] [4109896575 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0898] [4109896575 20.1s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0899] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0899] [3229169409 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:41694
+INFO[0899] [3229169409 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0899] [3229169409 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0902] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0902] [4148828958 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:37812
+INFO[0902] [4148828958 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0902] [4148828958 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0909] [3229169409 10.0s] dns: exchange failed for mtalk.google.com. IN A: context deadline exceeded
+ERROR[0912] [4148828958 10.0s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+INFO[0912] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0912] [1884868169 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:63318
+INFO[0912] [1884868169 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0912] [1884868169 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0912] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0912] [4191531425 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:16024
+INFO[0912] [4191531425 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0912] [4191531425 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0919] [3229169409 20.0s] dns: exchange failed for mtalk.google.com. IN A: context deadline exceeded
+ERROR[0922] [4148828958 20.1s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+ERROR[0922] [1884868169 10.0s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+INFO[0922] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0922] [477587694 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:59148
+INFO[0922] [477587694 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0922] [477587694 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0932] [4191531425 19.99s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+ERROR[0932] [1884868169 20.0s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+ERROR[0932] [4191531425 19.99s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+ERROR[0932] [477587694 10.0s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+ERROR[0942] [477587694 20.0s] dns: exchange failed for android.googleapis.com. IN A: context deadline exceeded
+INFO[0945] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0945] [1886329104 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:36155
+INFO[0945] [1886329104 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0945] [1886329104 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0949] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[0949] [2348948277 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:17366
+INFO[0949] [2348948277 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0949] [2348948277 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[0955] [1886329104 10.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0959] [2348948277 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[0965] [1886329104 20.0s] dns: exchange failed for playatoms-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[0969] [2348948277 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[0977] router: found package name: com.android.vending
+INFO[0977] [3564594617 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:11811
+INFO[0977] [3564594617 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0977] [3564594617 0ms] router: found package name: com.android.vending
+ERROR[0987] [3564594617 10.0s] dns: exchange failed for play.googleapis.com. IN A: context deadline exceeded
+INFO[0992] router: found package name: com.google.android.googlequicksearchbox
+INFO[0992] [359270606 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:56384
+INFO[0992] [359270606 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[0992] [359270606 0ms] router: found package name: com.google.android.googlequicksearchbox
+ERROR[0997] [3564594617 20.0s] dns: exchange failed for play.googleapis.com. IN A: context deadline exceeded
+ERROR[1002] [359270606 10.1s] dns: exchange failed for geller-pa.googleapis.com. IN A: context deadline exceeded
+INFO[1002] router: found package name: com.google.android.googlequicksearchbox
+INFO[1002] [1399954519 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:5468
+INFO[1002] [1399954519 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[1002] [1399954519 0ms] router: found package name: com.google.android.googlequicksearchbox
+ERROR[1012] [359270606 20.1s] dns: exchange failed for geller-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[1012] [1399954519 10.0s] dns: exchange failed for geller-pa.googleapis.com. IN A: context deadline exceeded
+ERROR[1022] [1399954519 20.0s] dns: exchange failed for geller-pa.googleapis.com. IN A: context deadline exceeded
+INFO[1082] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[1082] [4179430653 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:18964
+INFO[1082] [4179430653 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[1082] [4179430653 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[1092] [4179430653 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[1102] [4179430653 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+INFO[1223] router: found package name: com.google.android.gms, com.google.android.gsf
+INFO[1223] [1963309160 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:53312
+INFO[1223] [1963309160 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
+INFO[1223] [1963309160 0ms] router: found package name: com.google.android.gms, com.google.android.gsf
+ERROR[1233] [1963309160 10.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded
+ERROR[1243] [1963309160 20.0s] dns: exchange failed for userlocation.googleapis.com. IN A: context deadline exceeded

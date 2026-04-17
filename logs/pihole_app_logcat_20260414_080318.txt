@@ -1,0 +1,33 @@
+--------- beginning of crash
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: Process: org.pihole.android, PID: 1996
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: java.lang.IllegalStateException: EOF
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.readFully(TcpDnsServer.kt:87)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.handleClient(TcpDnsServer.kt:68)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.access$handleClient(TcpDnsServer.kt:17)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer$start$1$1.invokeSuspend(TcpDnsServer.kt:45)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+04-14 02:50:33.819  1996  2015 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@981bb49, Dispatchers.IO]
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-5
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: Process: org.pihole.android, PID: 2223
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: java.lang.IllegalStateException: EOF
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.readFully(TcpDnsServer.kt:87)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.handleClient(TcpDnsServer.kt:68)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer.access$handleClient(TcpDnsServer.kt:17)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at org.pihole.android.core.dns.server.TcpDnsServer$start$1$1.invokeSuspend(TcpDnsServer.kt:45)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+04-14 02:50:42.152  2223  2258 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@74f01b7, Dispatchers.IO]
