@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Keep lightweight app preferences, but avoid database snapshots with volatile logs/cache. -->
+    <include domain="sharedpref" path="." />
+    <include domain="file" path="." />
+    <include domain="database" path="." />
+    <exclude domain="database" path="pihole_android.db" />
+    <exclude domain="database" path="pihole_android.db-wal" />
+    <exclude domain="database" path="pihole_android.db-shm" />
+</full-backup-content>

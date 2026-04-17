@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">And-hole</string>
+    <string name="notification_channel_dns_title">DNS service</string>
+    <string name="notification_channel_dns_description">Foreground resolver on loopback</string>
+    <string name="notification_dns_running_title">DNS resolver running</string>
+    <string name="notification_dns_running_text">Listening on loopback</string>
+</resources>

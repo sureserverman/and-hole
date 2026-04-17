@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Debug / instrumented tests: loopback HTTP (e.g. MockWebServer for adlist E2E). Release stays cleartext-off. -->
+    <application
+        android:usesCleartextTraffic="true"
+        tools:replace="android:usesCleartextTraffic">
+
+        <!-- Host for Compose UI tests (see ComposeHostActivity). Not in release. -->
+        <activity
+            android:name=".ComposeHostActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PiholeAndroid" />
+
+        <activity
+            android:name=".debug.DebugStartDnsActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+
+        <receiver
+            android:name=".debug.DebugDnsReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.pihole.android.debug.START_DNS" />
+                <action android:name="org.pihole.android.debug.STOP_DNS" />
+                <action android:name="org.pihole.android.debug.OPEN_MAIN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".debug.DebugQueryLogReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.pihole.android.debug.QUERY_LOG_STATS" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
