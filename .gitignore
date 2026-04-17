@@ -27,3 +27,4 @@ __pycache__/
 MANUAL-VERIFICATION.md
 .cursor/rules/install-debug-after-android-changes.mdc
 BOOTSTRAP-CHECKLIST.md
+.claude/settings.local.json
