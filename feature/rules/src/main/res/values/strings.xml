@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rules_screen_title">Rules</string>
+    <string name="rules_add">Add</string>
+    <string name="rules_empty">No custom rules yet. Tap Add, or allow or block domains from the Logs tab.</string>
+    <string name="rules_add_rule_title">Add rule</string>
+    <string name="rules_domain_hint">Domain or regex pattern</string>
+    <string name="rules_exact">Exact</string>
+    <string name="rules_regex">Regex</string>
+    <string name="rules_section_custom">Custom rules</string>
+    <string name="rules_no_custom_rules">No custom match rules. Local DNS below still applies.</string>
+    <string name="rules_section_local">Local DNS (A / AAAA)</string>
+    <string name="rules_local_help">Static answers before blocklists and upstream. Use a hostname or FQDN.</string>
+    <string name="rules_local_empty">No static records.</string>
+    <string name="rules_add_local_record">Add local record</string>
+    <string name="rules_add_local_title">Add local record</string>
+    <string name="rules_local_name_hint">Name (e.g. router.lan)</string>
+    <string name="rules_local_value_hint">IPv4 or IPv6 address</string>
+    <string name="rules_local_ttl_hint">TTL (seconds)</string>
+    <string name="rules_allow">Allow</string>
+    <string name="rules_block">Block</string>
+    <string name="rules_save">Save</string>
+    <string name="rules_cancel">Cancel</string>
+    <string name="rules_delete">Delete</string>
+    <string name="rules_enabled">Enabled</string>
+    <string name="rules_disabled">Disabled</string>
+</resources>
