@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_backup_title">Backup &amp; restore</string>
+    <string name="settings_backup_body">Export/import (manual) includes ad list URLs, custom rules, and local DNS records. Automatic platform backup excludes the Room database (query log, compiled snapshots, and caches) to avoid restoring stale runtime data. Import clears current database data before applying the file; run Lists → Refresh after import.</string>
+    <string name="settings_export">Export JSON</string>
+    <string name="settings_import">Import JSON</string>
+    <string name="settings_oem_battery_title">Battery / OEM</string>
+    <string name="settings_oem_battery_body">If the listener stops after a few minutes or never starts from boot auto-start, open system Settings → Apps → And-hole Android → Battery and choose Unrestricted (wording varies: MIUI “No restrictions”, Samsung “Unrestricted”). Aggressive savers can kill foreground services. Longer notes: docs/OEM-FGS-RELIABILITY.md in the repo, and MANUAL-VERIFICATION § OEM battery.</string>
+    <string name="settings_dns_bind_all_title">VPN clients (advanced)</string>
+    <string name="settings_dns_bind_all_body">Listen on all interfaces (0.0.0.0) instead of loopback-only (127.0.0.1). Use when another app (e.g. sing-box) cannot reach 127.0.0.1 on this port even though And-hole logs show queries — Android VPN/tun routing can send DNS to a local tun address while logs still display 127.0.0.1. Warning: exposes DNS on every local interface (Wi‑Fi/LAN when connected); only enable briefly on trusted networks.</string>
+</resources>
