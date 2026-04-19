@@ -28,3 +28,18 @@ MANUAL-VERIFICATION.md
 .cursor/rules/install-debug-after-android-changes.mdc
 BOOTSTRAP-CHECKLIST.md
 .claude/settings.local.json
+
+# ===== AI Tools =====
+.claude/
+.claude_memory
+.cursorrules
+.cursor/
+.aider*
+.copilot/
+CLAUDE.md
+AGENTS.md
+.github/copilot-instructions.md
+
+# ===== AI / Design Plans =====
+docs/plans/
+plans/
