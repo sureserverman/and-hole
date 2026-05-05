@@ -17,6 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "pihole-android"
 
 include(":app")
+include(":core:designsystem")
 include(":core:dns")
 include(":core:filter")
 include(":core:upstream")

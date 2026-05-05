@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive-icon MONOCHROME layer (API 33+ themed icons / Material You).
+     The system tints this drawable with the user's wallpaper-derived color
+     and renders it on a matching tinted background. Must be a single color
+     glyph on transparent canvas; we use solid black so the system can apply
+     its tint cleanly.
+
+     Same shield-with-drop silhouette as the foreground, but the chevron
+     and hole are subtractive (cut out via fillType=evenOdd) instead of
+     drawn in a contrasting color, since themed icons can't show two tones. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Shield with chevron + sink-hole punched out via even-odd fill. -->
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="
+            M30,30 H78 V54 C78,68 70,78 54,84 C38,78 30,68 30,54 Z
+            M44.5,47.5 L43.5,48.5 L53.5,58.5 L54.5,58.5 L64.5,48.5 L63.5,47.5 L54,57 Z
+            M54,70 m-4.5,0 a4.5,4.5 0,1 0,9 0 a4.5,4.5 0,1 0,-9 0 z" />
+</vector>

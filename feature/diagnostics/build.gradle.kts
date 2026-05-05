@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation(project(":data"))
+    implementation(project(":core:designsystem"))
     implementation(project(":core:tor"))
     implementation(project(":core:dns"))
     implementation(project(":core:upstream"))

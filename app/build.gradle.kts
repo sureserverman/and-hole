@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":feature:settings"))
     implementation(project(":feature:diagnostics"))
     implementation(project(":data"))
+    implementation(project(":core:designsystem"))
     implementation(project(":core:dns"))
     implementation(project(":core:filter"))
     implementation(project(":core:upstream"))

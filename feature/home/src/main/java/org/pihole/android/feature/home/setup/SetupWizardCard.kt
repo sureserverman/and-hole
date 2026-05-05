@@ -1,55 +1,87 @@
 package org.pihole.android.feature.home.setup
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import org.pihole.android.core.designsystem.components.AhCard
+import org.pihole.android.core.designsystem.theme.AhTheme
 
 @Composable
 fun SetupWizardCard(
     state: SetupUiState,
     onComplete: () -> Unit,
 ) {
-    Card(
+    val c = AhTheme.colors
+    val total = state.steps.size.coerceAtLeast(1)
+    val done = state.steps.count { it.complete }
+    AhCard(
         modifier = Modifier
             .fillMaxWidth()
             .testTag("setup_wizard_card"),
-        colors =
-            CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        shape = MaterialTheme.shapes.large,
+        accent = true,
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            Text("Guided setup", style = MaterialTheme.typography.titleMedium)
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(
-                "Finish the key setup steps so your device routes queries through the local DNS listener reliably.",
-                style = MaterialTheme.typography.bodySmall,
+                text = "STEP ${(done + 1).toString().padStart(2, '0')} • ${total.toString().padStart(2, '0')}",
+                style = AhTheme.text.monoEyebrow,
+                color = c.accent,
+            )
+            Text(
+                text = "Guided setup",
+                style = AhTheme.text.pageTitle.copy(fontSize = 22.sp, fontWeight = FontWeight.SemiBold),
+                color = c.text,
+            )
+            Text(
+                text = "Finish the key setup steps so your device routes queries through the local DNS listener reliably.",
+                style = AhTheme.text.body,
+                color = c.textMute,
             )
             if (state.recommendedActions.isNotEmpty()) {
-                state.recommendedActions.forEach { action ->
-                    Text("- $action", style = MaterialTheme.typography.bodySmall)
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    state.recommendedActions.forEach { action ->
+                        Text(
+                            text = "→ $action",
+                            style = AhTheme.text.monoCaption,
+                            color = c.textMute,
+                        )
+                    }
                 }
             }
-            Button(
-                onClick = onComplete,
-                modifier = Modifier.testTag("setup_complete_button"),
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(CircleShape)
+                    .background(c.accent)
+                    .clickable(onClick = onComplete)
+                    .padding(vertical = 12.dp)
+                    .testTag("setup_complete_button"),
             ) {
-                Text("Finish onboarding")
+                Text(
+                    text = "Mark complete →",
+                    style = AhTheme.text.pill,
+                    color = c.accentInk,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                )
             }
         }
     }
 }
+

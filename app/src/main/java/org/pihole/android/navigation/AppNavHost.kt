@@ -2,36 +2,29 @@ package org.pihole.android.navigation
 
 import android.content.Intent
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
-import org.pihole.android.App
-import org.pihole.android.service.DnsForegroundService
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import org.pihole.android.App
+import org.pihole.android.core.designsystem.components.AhNavBar
+import org.pihole.android.core.designsystem.components.AhNavItem
+import org.pihole.android.core.designsystem.icons.AhIcons
+import org.pihole.android.data.runtime.DefaultDnsControlRepository
 import org.pihole.android.feature.diagnostics.DiagnosticsScreen
 import org.pihole.android.feature.diagnostics.DiagnosticsViewModelFactory
 import org.pihole.android.feature.home.HomeScreen
@@ -47,18 +40,18 @@ import org.pihole.android.feature.settings.DnsListenerActions
 import org.pihole.android.feature.settings.LocalDnsListenerActions
 import org.pihole.android.feature.settings.SettingsBackupViewModelFactory
 import org.pihole.android.feature.settings.SettingsScreen
-import org.pihole.android.data.runtime.DefaultDnsControlRepository
+import org.pihole.android.service.DnsForegroundService
 
 private sealed class TopLevelDestination(
     val route: String,
     val label: String,
     val icon: ImageVector,
 ) {
-    data object Home : TopLevelDestination("home", "Home", Icons.Filled.Home)
-    data object Rules : TopLevelDestination("rules", "Rules", Icons.Filled.Info)
-    data object Logs : TopLevelDestination("logs", "Logs", Icons.Filled.Search)
-    data object Lists : TopLevelDestination("lists", "Lists", Icons.Filled.List)
-    data object Settings : TopLevelDestination("settings", "Settings", Icons.Filled.Settings)
+    data object Home : TopLevelDestination("home", "Home", AhIcons.Home)
+    data object Rules : TopLevelDestination("rules", "Rules", AhIcons.Rules)
+    data object Logs : TopLevelDestination("logs", "Logs", AhIcons.Search)
+    data object Lists : TopLevelDestination("lists", "Lists", AhIcons.ListIcon)
+    data object Settings : TopLevelDestination("settings", "Settings", AhIcons.Settings)
 }
 
 @Composable
@@ -97,38 +90,36 @@ fun AppNavHost() {
     val navController = rememberNavController()
     val destinations = listOf(
         TopLevelDestination.Home,
-        TopLevelDestination.Rules,
         TopLevelDestination.Logs,
         TopLevelDestination.Lists,
+        TopLevelDestination.Rules,
         TopLevelDestination.Settings,
     )
+    val navItems = destinations.map { AhNavItem(it.route, it.label, it.icon) }
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
+    val selectedKey = destinations.firstOrNull { dest ->
+        currentDestination?.hierarchy?.any { it.route == dest.route } == true
+    }?.route ?: TopLevelDestination.Home.route
 
     CompositionLocalProvider(LocalDnsListenerActions provides dnsListenerActions) {
         Scaffold(
             containerColor = MaterialTheme.colorScheme.background,
             bottomBar = {
-                NavigationBar {
-                    destinations.forEach { destination ->
-                        val selected = currentDestination?.hierarchy?.any { it.route == destination.route } == true
-                        NavigationBarItem(
-                            modifier = Modifier.testTag("bottom_nav_${destination.route}"),
-                            icon = { Icon(destination.icon, contentDescription = destination.label) },
-                            label = { Text(destination.label) },
-                            selected = selected,
-                            onClick = {
-                                navController.navigate(destination.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
-                                    }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            },
-                        )
-                    }
-                }
+                AhNavBar(
+                    items = navItems,
+                    selectedKey = selectedKey,
+                    onSelect = { route ->
+                        navController.navigate(route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    itemModifier = { route -> Modifier.testTag("bottom_nav_$route") },
+                )
             },
         ) { innerPadding ->
             NavHost(

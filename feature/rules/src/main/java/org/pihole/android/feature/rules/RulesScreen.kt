@@ -1,26 +1,28 @@
 package org.pihole.android.feature.rules
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,20 +32,30 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.pihole.android.core.designsystem.components.AhAppBar
+import org.pihole.android.core.designsystem.components.AhCard
+import org.pihole.android.core.designsystem.components.Pill
+import org.pihole.android.core.designsystem.components.PillSwitch
+import org.pihole.android.core.designsystem.components.PillVariant
+import org.pihole.android.core.designsystem.icons.AhIcons
+import org.pihole.android.core.designsystem.theme.AhTheme
 import org.pihole.android.data.db.entity.CustomRuleEntity
 import org.pihole.android.data.db.entity.LocalDnsRecordEntity
 
-@OptIn(ExperimentalMaterial3Api::class)
+private enum class RulesTab { Exact, Regex, Local }
+
 @Composable
-fun RulesScreen(
-    vm: RulesViewModel,
-) {
+fun RulesScreen(vm: RulesViewModel) {
     val rules by vm.rules.collectAsStateWithLifecycle()
     val localRecords by vm.localRecords.collectAsStateWithLifecycle()
+    var activeTab by remember { mutableStateOf(RulesTab.Exact) }
+
     var showAddDialog by remember { mutableStateOf(false) }
     var draftValue by remember { mutableStateOf("") }
     var draftIsAllow by remember { mutableStateOf(false) }
@@ -55,103 +67,89 @@ fun RulesScreen(
     var draftLocalTtl by remember { mutableStateOf("300") }
     var draftLocalQtype by remember { mutableIntStateOf(RulesViewModel.QTYPE_CHOICES.first().first) }
 
+    val exactRules = rules.filter { it.kind.startsWith("exact_") }
+    val regexRules = rules.filter { it.kind.startsWith("regex_") }
+
     Scaffold(
+        containerColor = AhTheme.colors.bg,
         topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        stringResource(R.string.rules_screen_title),
-                        modifier = Modifier.testTag("rules_top_bar_title"),
-                    )
-                },
-                actions = {
-                    TextButton(
-                        onClick = {
-                            draftValue = ""
-                            draftIsAllow = false
-                            draftIsRegex = false
-                            showAddDialog = true
-                        },
-                        modifier = Modifier.testTag("rules_add_button"),
+            AhAppBar(
+                title = stringResource(R.string.rules_screen_title),
+                sub = "${exactRules.size} exact · ${regexRules.size} regex",
+                modifier = Modifier.testTag("rules_top_bar_title"),
+                right = {
+                    Box(
+                        modifier = Modifier
+                            .size(36.dp)
+                            .clip(CircleShape)
+                            .border(1.dp, AhTheme.colors.accent, CircleShape)
+                            .clickable {
+                                draftValue = ""
+                                draftIsAllow = false
+                                draftIsRegex = activeTab == RulesTab.Regex
+                                showAddDialog = true
+                            }
+                            .testTag("rules_add_button"),
+                        contentAlignment = Alignment.Center,
                     ) {
-                        Text(stringResource(R.string.rules_add))
+                        Icon(
+                            imageVector = AhIcons.Plus,
+                            contentDescription = stringResource(R.string.rules_add),
+                            tint = AhTheme.colors.accent,
+                            modifier = Modifier.size(16.dp),
+                        )
                     }
                 },
             )
         },
     ) { innerPadding ->
-        LazyColumn(
-            modifier =
-                Modifier
-                    .padding(innerPadding)
-                    .fillMaxSize(),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize(),
         ) {
-            item {
-                Text(stringResource(R.string.rules_section_custom), style = MaterialTheme.typography.titleMedium)
-            }
-            if (rules.isEmpty()) {
-                item {
-                    Text(
-                        text =
-                            if (localRecords.isEmpty()) {
-                                stringResource(R.string.rules_empty)
-                            } else {
-                                stringResource(R.string.rules_no_custom_rules)
-                            },
-                        style = MaterialTheme.typography.bodyLarge,
-                        modifier = Modifier.testTag("rules_empty_state"),
-                    )
-                }
-            } else {
-                items(rules, key = { it.id }) { rule ->
-                    RuleRow(
-                        rule = rule,
-                        onEnabledChange = { vm.setRuleEnabled(rule, it) },
-                        onDelete = { vm.deleteRule(rule) },
-                    )
-                }
-            }
+            TabRow(active = activeTab, onSelect = { activeTab = it })
+            ActionChips(
+                onAllow = {
+                    draftValue = ""
+                    draftIsAllow = true
+                    draftIsRegex = activeTab == RulesTab.Regex
+                    showAddDialog = true
+                },
+                onDeny = {
+                    draftValue = ""
+                    draftIsAllow = false
+                    draftIsRegex = activeTab == RulesTab.Regex
+                    showAddDialog = true
+                },
+                onAddLocal = {
+                    draftLocalName = ""
+                    draftLocalValue = ""
+                    draftLocalTtl = "300"
+                    draftLocalQtype = RulesViewModel.QTYPE_CHOICES.first().first
+                    showLocalDialog = true
+                },
+                tab = activeTab,
+            )
 
-            item { HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp)) }
-
-            item {
-                Text(stringResource(R.string.rules_section_local), style = MaterialTheme.typography.titleMedium)
-            }
-            item {
-                Text(
-                    stringResource(R.string.rules_local_help),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+            when (activeTab) {
+                RulesTab.Exact -> RuleList(
+                    rules = exactRules,
+                    fallbackEmpty = stringResource(R.string.rules_no_custom_rules),
+                    onEnabled = vm::setRuleEnabled,
+                    onDelete = vm::deleteRule,
                 )
-            }
-            if (localRecords.isEmpty()) {
-                item {
-                    Text(stringResource(R.string.rules_local_empty), style = MaterialTheme.typography.bodyMedium)
-                }
-            } else {
-                items(localRecords, key = { it.id }) { rec ->
-                    LocalDnsRecordRow(
-                        record = rec,
-                        onEnabledChange = { vm.setLocalRecordEnabled(rec, it) },
-                        onDelete = { vm.deleteLocalRecord(rec) },
-                    )
-                }
-            }
-            item {
-                TextButton(
-                    onClick = {
-                        draftLocalName = ""
-                        draftLocalValue = ""
-                        draftLocalTtl = "300"
-                        draftLocalQtype = RulesViewModel.QTYPE_CHOICES.first().first
-                        showLocalDialog = true
-                    },
-                    modifier = Modifier.testTag("rules_add_local_button"),
-                ) {
-                    Text(stringResource(R.string.rules_add_local_record))
-                }
+                RulesTab.Regex -> RuleList(
+                    rules = regexRules,
+                    fallbackEmpty = stringResource(R.string.rules_no_custom_rules),
+                    onEnabled = vm::setRuleEnabled,
+                    onDelete = vm::deleteRule,
+                )
+                RulesTab.Local -> LocalList(
+                    records = localRecords,
+                    onEnabled = vm::setLocalRecordEnabled,
+                    onDelete = vm::deleteLocalRecord,
+                )
             }
         }
     }
@@ -162,10 +160,7 @@ fun RulesScreen(
             title = { Text(stringResource(R.string.rules_add_rule_title)) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                         FilterChip(
                             selected = !draftIsRegex,
                             onClick = { draftIsRegex = false },
@@ -179,10 +174,7 @@ fun RulesScreen(
                             modifier = Modifier.testTag("rules_add_mode_regex"),
                         )
                     }
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                         FilterChip(
                             selected = draftIsAllow,
                             onClick = { draftIsAllow = true },
@@ -203,10 +195,9 @@ fun RulesScreen(
                         singleLine = false,
                         minLines = 1,
                         maxLines = 3,
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .testTag("rules_add_domain_field"),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("rules_add_domain_field"),
                     )
                 }
             },
@@ -248,10 +239,9 @@ fun RulesScreen(
                         onValueChange = { draftLocalName = it },
                         label = { Text(stringResource(R.string.rules_local_name_hint)) },
                         singleLine = true,
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .testTag("rules_local_name_field"),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("rules_local_name_field"),
                     )
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         for ((code, label) in RulesViewModel.QTYPE_CHOICES) {
@@ -268,20 +258,18 @@ fun RulesScreen(
                         onValueChange = { draftLocalValue = it },
                         label = { Text(stringResource(R.string.rules_local_value_hint)) },
                         singleLine = true,
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .testTag("rules_local_value_field"),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("rules_local_value_field"),
                     )
                     OutlinedTextField(
                         value = draftLocalTtl,
                         onValueChange = { draftLocalTtl = it.filter { ch -> ch.isDigit() } },
                         label = { Text(stringResource(R.string.rules_local_ttl_hint)) },
                         singleLine = true,
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .testTag("rules_local_ttl_field"),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("rules_local_ttl_field"),
                     )
                 }
             },
@@ -297,10 +285,7 @@ fun RulesScreen(
                             ttl = draftLocalTtl.toIntOrNull() ?: 300,
                         )
                     },
-                    enabled =
-                        draftLocalName.trim().isNotEmpty() &&
-                            draftLocalValue.trim().isNotEmpty() &&
-                            ttlOk,
+                    enabled = draftLocalName.trim().isNotEmpty() && draftLocalValue.trim().isNotEmpty() && ttlOk,
                     modifier = Modifier.testTag("rules_local_confirm"),
                 ) {
                     Text(stringResource(R.string.rules_save))
@@ -316,90 +301,239 @@ fun RulesScreen(
 }
 
 @Composable
+private fun TabRow(active: RulesTab, onSelect: (RulesTab) -> Unit) {
+    val c = AhTheme.colors
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(20.dp),
+    ) {
+        TabItem(label = "Exact", selected = active == RulesTab.Exact) { onSelect(RulesTab.Exact) }
+        TabItem(label = "Regex", selected = active == RulesTab.Regex) { onSelect(RulesTab.Regex) }
+        TabItem(label = "Local DNS", selected = active == RulesTab.Local) { onSelect(RulesTab.Local) }
+    }
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(1.dp)
+            .background(c.border),
+    )
+}
+
+@Composable
+private fun TabItem(label: String, selected: Boolean, onClick: () -> Unit) {
+    val c = AhTheme.colors
+    Column(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .padding(vertical = 6.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = label,
+            color = if (selected) c.accent else c.textMute,
+            style = AhTheme.text.body.copy(fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium),
+        )
+        Box(
+            modifier = Modifier
+                .padding(top = 4.dp)
+                .size(width = 40.dp, height = 2.dp)
+                .background(if (selected) c.accent else androidx.compose.ui.graphics.Color.Transparent),
+        )
+    }
+}
+
+@Composable
+private fun ActionChips(
+    onAllow: () -> Unit,
+    onDeny: () -> Unit,
+    onAddLocal: () -> Unit,
+    tab: RulesTab,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        if (tab == RulesTab.Local) {
+            Pill(
+                text = "+ Local DNS",
+                variant = PillVariant.Ghost,
+                onClick = onAddLocal,
+                modifier = Modifier.testTag("rules_add_local_button"),
+            )
+        } else {
+            Pill(text = "+ Allow", variant = PillVariant.Ghost, onClick = onAllow)
+            Pill(text = "+ Deny", variant = PillVariant.Danger, onClick = onDeny)
+        }
+    }
+}
+
+@Composable
+private fun RuleList(
+    rules: List<CustomRuleEntity>,
+    fallbackEmpty: String,
+    onEnabled: (CustomRuleEntity, Boolean) -> Unit,
+    onDelete: (CustomRuleEntity) -> Unit,
+) {
+    if (rules.isEmpty()) {
+        Box(modifier = Modifier.padding(16.dp).testTag("rules_empty_state")) {
+            Text(text = fallbackEmpty, style = AhTheme.text.body, color = AhTheme.colors.textMute)
+        }
+        return
+    }
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        items(rules, key = { it.id }) { rule ->
+            RuleRow(rule = rule, onEnabledChange = { onEnabled(rule, it) }, onDelete = { onDelete(rule) })
+        }
+    }
+}
+
+@Composable
+private fun LocalList(
+    records: List<LocalDnsRecordEntity>,
+    onEnabled: (LocalDnsRecordEntity, Boolean) -> Unit,
+    onDelete: (LocalDnsRecordEntity) -> Unit,
+) {
+    if (records.isEmpty()) {
+        Box(modifier = Modifier.padding(16.dp)) {
+            Text(text = stringResource(R.string.rules_local_empty), style = AhTheme.text.body, color = AhTheme.colors.textMute)
+        }
+        return
+    }
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        items(records, key = { it.id }) { rec ->
+            LocalRow(record = rec, onEnabledChange = { onEnabled(rec, it) }, onDelete = { onDelete(rec) })
+        }
+    }
+}
+
+@Composable
 private fun RuleRow(
     rule: CustomRuleEntity,
     onEnabledChange: (Boolean) -> Unit,
     onDelete: () -> Unit,
 ) {
-    Card(
+    val c = AhTheme.colors
+    val isAllow = rule.kind.endsWith("_allow")
+    val avatarColor = if (isAllow) c.accent else c.blocked
+    val avatarGlyph = if (isAllow) "✓" else "×"
+
+    AhCard(
         modifier = Modifier.fillMaxWidth().testTag("rules_rule_row_${rule.id}"),
-        colors =
-            CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        shape = MaterialTheme.shapes.medium,
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            Text(rule.kind, style = MaterialTheme.typography.labelMedium)
-            Text(rule.value, style = MaterialTheme.typography.bodyLarge)
-            rule.comment?.takeIf { it.isNotBlank() }?.let {
-                Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Box(
+                modifier = Modifier
+                    .size(30.dp)
+                    .clip(CircleShape)
+                    .background(avatarColor.copy(alpha = 0.18f))
+                    .border(1.dp, avatarColor, CircleShape),
+                contentAlignment = Alignment.Center,
             ) {
-                Text(stringResource(R.string.rules_enabled), style = MaterialTheme.typography.labelLarge)
-                Switch(
-                    checked = rule.enabled,
-                    onCheckedChange = onEnabledChange,
-                    modifier = Modifier.testTag("rules_rule_enabled_${rule.id}"),
+                Text(text = avatarGlyph, color = avatarColor, style = AhTheme.text.body.copy(fontWeight = FontWeight.SemiBold))
+            }
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = rule.value,
+                    style = AhTheme.text.body.copy(fontWeight = FontWeight.SemiBold),
+                    color = c.text,
+                    maxLines = 1,
+                )
+                Text(
+                    text = "${if (isAllow) "Allow" else "Deny"} · ${rule.kind.removeSuffix("_allow").removeSuffix("_deny")}${rule.comment?.takeIf { it.isNotBlank() }?.let { " · $it" } ?: ""}",
+                    style = AhTheme.text.monoCaption,
+                    color = c.textMute,
+                    maxLines = 1,
                 )
             }
-            TextButton(
-                onClick = onDelete,
-                modifier = Modifier.testTag("rules_rule_delete_${rule.id}"),
+            PillSwitch(
+                checked = rule.enabled,
+                onCheckedChange = onEnabledChange,
+                modifier = Modifier.testTag("rules_rule_enabled_${rule.id}"),
+            )
+            Box(
+                modifier = Modifier
+                    .size(28.dp)
+                    .clip(CircleShape)
+                    .clickable(onClick = onDelete)
+                    .testTag("rules_rule_delete_${rule.id}"),
+                contentAlignment = Alignment.Center,
             ) {
-                Text(stringResource(R.string.rules_delete))
+                Icon(
+                    imageVector = AhIcons.Trash,
+                    contentDescription = stringResource(R.string.rules_delete),
+                    tint = c.textMute,
+                    modifier = Modifier.size(14.dp),
+                )
             }
         }
     }
 }
 
 @Composable
-private fun LocalDnsRecordRow(
+private fun LocalRow(
     record: LocalDnsRecordEntity,
     onEnabledChange: (Boolean) -> Unit,
     onDelete: () -> Unit,
 ) {
-    Card(
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .testTag("rules_local_row_${record.id}"),
-        colors =
-            CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        shape = MaterialTheme.shapes.medium,
+    val c = AhTheme.colors
+    AhCard(
+        modifier = Modifier.fillMaxWidth().testTag("rules_local_row_${record.id}"),
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            Text(
-                "type=${record.type} ttl=${record.ttl}",
-                style = MaterialTheme.typography.labelMedium,
-            )
-            Text(record.name, style = MaterialTheme.typography.bodyLarge)
-            Text(record.value, style = MaterialTheme.typography.bodyMedium)
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Box(
+                modifier = Modifier
+                    .size(30.dp)
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(c.surface2),
+                contentAlignment = Alignment.Center,
             ) {
-                Text(stringResource(R.string.rules_enabled), style = MaterialTheme.typography.labelLarge)
-                Switch(
-                    checked = record.enabled,
-                    onCheckedChange = onEnabledChange,
-                    modifier = Modifier.testTag("rules_local_enabled_${record.id}"),
+                Text(text = record.type.toString(), style = AhTheme.text.monoCaption, color = c.textMute)
+            }
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = record.name,
+                    style = AhTheme.text.body.copy(fontWeight = FontWeight.SemiBold),
+                    color = c.text,
+                    maxLines = 1,
+                )
+                Text(
+                    text = "${record.value} · ttl=${record.ttl}",
+                    style = AhTheme.text.monoCaption,
+                    color = c.textMute,
+                    maxLines = 1,
                 )
             }
-            TextButton(
-                onClick = onDelete,
-                modifier = Modifier.testTag("rules_local_delete_${record.id}"),
+            PillSwitch(
+                checked = record.enabled,
+                onCheckedChange = onEnabledChange,
+                modifier = Modifier.testTag("rules_local_enabled_${record.id}"),
+            )
+            Box(
+                modifier = Modifier
+                    .size(28.dp)
+                    .clip(CircleShape)
+                    .clickable(onClick = onDelete)
+                    .testTag("rules_local_delete_${record.id}"),
+                contentAlignment = Alignment.Center,
             ) {
-                Text(stringResource(R.string.rules_delete))
+                Icon(
+                    imageVector = AhIcons.Trash,
+                    contentDescription = stringResource(R.string.rules_delete),
+                    tint = c.textMute,
+                    modifier = Modifier.size(14.dp),
+                )
             }
         }
     }

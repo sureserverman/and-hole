@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation(project(":data"))
+    implementation(project(":core:designsystem"))
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.core.ktx)

@@ -5,12 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.pihole.android.feature.lists"
+    namespace = "org.pihole.android.core.designsystem"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -29,18 +28,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":core:designsystem"))
-
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
-
-    testImplementation(libs.junit)
 }

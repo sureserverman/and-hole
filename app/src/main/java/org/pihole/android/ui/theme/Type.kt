@@ -1,5 +1,3 @@
 package org.pihole.android.ui.theme
 
-import androidx.compose.material3.Typography
-
-val PiholeTypography = Typography()
+// Legacy typography catalog moved to core:designsystem (AhMaterialTypography).
